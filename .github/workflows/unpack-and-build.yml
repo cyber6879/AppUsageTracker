@@ -18,7 +18,7 @@ jobs:
       - name: Unpack Project Archive & Push Source Tree
         run: |
           if [ -f "project_bundle.b64" ]; then
-            base64 -d project_bundle.b64 > project.zip
+            python3 -c "import base64; open('project.zip','wb').write(base64.b64decode(open('project_bundle.b64').read().strip()))"
             unzip -o project.zip
             rm -f project_bundle.b64 project.zip
             git config user.name "github-actions[bot]"
