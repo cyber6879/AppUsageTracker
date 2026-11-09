@@ -1,0 +1,2 @@
+-keep class com.monitor.usagetracker.data.local.entity.** { *; }
+-keep class com.monitor.usagetracker.data.local.dao.** { *; }
